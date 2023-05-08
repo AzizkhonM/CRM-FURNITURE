@@ -1,21 +1,52 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Dashboard from '../views/DashboardView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'dashboard',
+      component: Dashboard,
+      children: [
+        {
+          path: '/employee',
+          name: 'employee',
+          component: () => import('../views/Employee/Employee.vue')
+        },
+        {
+          path: '/product',
+          name: 'product',
+          component: () => import('../views/Product/Product.vue')
+        },
+        {
+          path: '/order',
+          name: 'order',
+          component: () => import('../views/Order/Order.vue')
+        },
+        {
+          path: '/contact',
+          name: 'contact',
+          component: () => import('../views/Contact/Contact.vue')
+        },
+        {
+          path: '/region',
+          name: 'region',
+          component: () => import('../views/Region/Region.vue')
+        }
+      ]
     },
+
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      path: "/login",
+      name: "login",
+      component: () => import("../views/Login/Login.vue")
+    },
+
+    {
+      path: "/:pathMatch(.*)*",
+      name: "error",
+      component: () => import("../views/Error/Error.vue")
     }
   ]
 })
