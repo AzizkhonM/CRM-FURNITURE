@@ -12,16 +12,22 @@ export const navLinks = [
         icon: "bx bxs-user-plus"
     },
     {
-        id: 4,
-        title: 'Buyurtmalar',
-        link: "/order",
-        icon: "bx bxs-store-alt"
+        id: 7,
+        title: 'Mahsulotlar',
+        link: "/product",
+        icon: "bx bx-chair"
     },
     {
         id: 5,
         title: 'Kontaktlar',
         link: "/contact",
         icon: "bx bxs-contact"
+    },
+    {
+        id: 4,
+        title: 'Buyurtmalar',
+        link: "/order",
+        icon: "bx bxs-store-alt"
     },
     {
         id: 3,
@@ -34,12 +40,6 @@ export const navLinks = [
         title: 'Viloyatlar',
         link: "/region",
         icon: "bx bxs-map"
-    },
-    {
-        id: 7,
-        title: 'Mahsulotlar',
-        link: "/product",
-        icon: "bx bx-chair"
     },
     {
         id: 7,
